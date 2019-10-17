@@ -1,0 +1,29 @@
+<script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <!-- Renderiza apenas uma vez -->
+    <p v-once>{{ titulo }}</p>
+
+    <p>{{ saudacao() }}</p>
+    
+    <a v-bind:href="link">Google</a>
+    <hr>
+    <!-- interpretar html -->
+    <p v-html="linkHtml"></p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJS!',
+            link: 'http://google.com',
+            linkHtml: '<a href="http://www.unifsa.com.br">UNIFSA</a>'
+        },
+        methods: {
+            saudacao: function () {
+                this.titulo = "Chicó"
+                return `Bom dia ${this.titulo}`
+            }
+        }
+    })
+</script>
