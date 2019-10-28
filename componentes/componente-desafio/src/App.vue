@@ -12,11 +12,13 @@
 </template>
 
 <script>
-import Rodape from './Rodape.vue'
-import Topo from './Topo.vue'
-import TopoMenu from './TopoMenu.vue'
-import Conteudo from './Conteudo.vue'
-import ListaMenu from './ListaMenu.vue'
+
+// @ remete a src/
+import Rodape from '@/components/template/Rodape.vue'
+import Topo from '@/components/template/Topo.vue'
+import TopoMenu from '@/components/template/TopoMenu.vue'
+import ListaMenu from '@/components/template/ListaMenu.vue'
+import Conteudo from '@/components/Conteudo.vue'
 
 export default {
   components: {
@@ -25,6 +27,11 @@ export default {
     topomenu: TopoMenu,
     conteudo: Conteudo,
     listamenu: ListaMenu
+    // Rodape,
+    // Topo,
+    // TopoMenu,
+    // Conteudo,
+    // ListaMenu
   }
 }
 </script>
