@@ -2,12 +2,28 @@
     <div class="componente">
         <h2>As Informações de Usuário</h2>
         <p>Vários detalhes...</p>
+        <p>Nome de Usuário: <strong>{{ nome }}</strong></p>
+        <button @click="reiniciarNome">Reiniciar Nome</button>
+        <button @click="reiniciarFn">Reiniciar Nome(callback)</button>
     </div>
 </template>
 
 <script>
 export default {
-    
+    props: {
+        nome: {
+            type: String
+        },
+        reiniciarFn: Function
+    },
+    methods: {
+        reiniciarNome(){
+            const novo_nome = this.nome == 'Pedro' ? 'Maria' : 'Pedro'
+            // dispara evento personalizado
+            this.$emit('reiniciarNome', novo_nome )
+        }
+    }
+
 }
 </script>
 
