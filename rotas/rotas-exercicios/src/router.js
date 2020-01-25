@@ -3,14 +3,20 @@ import Router from 'vue-router'
 import Inicio from './components/Inicio'
 
 
-import Usuario from './components/usuario/Usuario'
-import UsuarioLista from './components/usuario/UsuarioLista'
-import UsuarioDetalhe from './components/usuario/UsuarioDetalhe'
-import UsuarioEditar from './components/usuario/UsuarioEditar'
+// import Usuario from './components/usuario/Usuario'
+// import UsuarioLista from './components/usuario/UsuarioLista'
+// import UsuarioDetalhe from './components/usuario/UsuarioDetalhe'
+// import UsuarioEditar from './components/usuario/UsuarioEditar'
 import Menu from './components/Menu'
 import MenuAlt from './components/MenuAlt'
 
 Vue.use(Router)
+
+// Carregar componente dinamicamente
+const Usuario = () => import(/* webpackChunkName: "usuario" */ './components/usuario/Usuario.vue')
+const UsuarioEditar = () => import(/* webpackChunkName: "usuario" */ './components/usuario/UsuarioEditar.vue')
+const UsuarioLista = () => import(/* webpackChunkName: "usuario" */ './components/usuario/UsuarioLista.vue')
+const UsuarioDetalhe = () => import(/* webpackChunkName: "usuario" */ './components/usuario/UsuarioDetalhe.vue')
 
 const router = new Router({
     mode: 'hash', //history: alternativa requer alteração no servidor web
